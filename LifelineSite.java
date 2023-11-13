@@ -10,11 +10,13 @@ public class LifelineSite extends Site{
         return base + tax;
     }
 
-    public double getBaseAmount() {
+    @Override
+    protected double getBaseAmount() {
         return _units * _rate;
     }
 
-    public double getTaxAmount(){
+    @Override
+    protected double getTaxAmount(){
         return this.getBaseAmount() * Site.TAX_RATE;
     }
 }

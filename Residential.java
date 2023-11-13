@@ -10,11 +10,13 @@ public class Residential extends Site{
         return base + tax;
     }
 
-    public double getBaseAmount() {
-        return _units * _rate;
+    @Override
+    protected double getBaseAmount() {
+        return _units * _rate * 0.5;
     }
 
-    public double getTaxAmount(){
+    @Override
+    protected double getTaxAmount(){
         return this.getBaseAmount() * Site.TAX_RATE;
     }
 
